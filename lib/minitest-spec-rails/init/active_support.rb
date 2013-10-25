@@ -26,4 +26,4 @@ ActiveSupport::TestCase.send :include, MiniTestSpecRails::Init::ActiveSupportBeh
 # and hence wont find a #path match in REGEXPS due to the space. So add
 # another that allows filenames with spaces in it.
 #
-LoadError::REGEXPS << %r{^Missing \w+ (?:file\s*)?(.*\.rb)$}i
+LoadError::REGEXPS << %r{^Missing \w+ (?:file\s*)?(.*\.rb)$}i if RUBY_VERSION.include?("1.8")
